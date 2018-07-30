@@ -1,7 +1,8 @@
 cordova-safe
 ====
 
-[![Build Status](https://travis-ci.org/disusered/cordova-safe.svg)](https://travis-ci.org/disusered/cordova-safe) [![Code Climate](https://codeclimate.com/github/disusered/cordova-safe/badges/gpa.svg)](https://codeclimate.com/github/disusered/cordova-safe) 
+Fix for a specific use case on iOS, not including any Android fixes done by other branches.
+No support; use this version at your risk!
 
 > Simple file encryption for Cordova.
 
