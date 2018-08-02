@@ -2,14 +2,14 @@ cordova-safe
 ====
 
 Fix for a specific use case on iOS, not including any Android fixes done by other branches.
-No support; use this version at your risk!
+No support (for now); use this version at your risk!
 
 > Simple file encryption for Cordova.
 
 ## Install
 
 ```bash
-$ cordova plugin add cordova-safe
+$ cordova plugin add cordova-safe@https://github.com/ManuelFeller/cordova-safe
 ```
 
 ## Usage
