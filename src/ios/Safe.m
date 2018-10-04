@@ -8,21 +8,22 @@
  *  @param command An array of arguments passed from javascript
  */
 - (void)encrypt:(CDVInvokedUrlCommand *)command {
+  [self.commandDelegate runInBackground:^{
+    CDVPluginResult *pluginResult = nil;
 
-  CDVPluginResult *pluginResult = nil;
+    NSString *path = [self crypto:@"encrypt" command:command];
 
-  NSString *path = [self crypto:@"encrypt" command:command];
+    if (path != nil) {
+      pluginResult =
+          [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                            messageAsString:path];
+    } else {
+      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    }
 
-  if (path != nil) {
-    pluginResult =
-        [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                          messageAsString:path];
-  } else {
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-  }
-
-  [self.commandDelegate sendPluginResult:pluginResult
-                              callbackId:command.callbackId];
+    [self.commandDelegate sendPluginResult:pluginResult
+                                callbackId:command.callbackId];
+  }];
 }
 
 /**
@@ -31,21 +32,22 @@
  *  @param command An array of arguments passed from javascript
  */
 - (void)decrypt:(CDVInvokedUrlCommand *)command {
+  [self.commandDelegate runInBackground:^{
+    CDVPluginResult *pluginResult = nil;
 
-  CDVPluginResult *pluginResult = nil;
+    NSString *path = [self crypto:@"decrypt" command:command];
 
-  NSString *path = [self crypto:@"decrypt" command:command];
+    if (path != nil) {
+      pluginResult =
+          [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                             messageAsString:path];
+    } else {
+      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    }
 
-  if (path != nil) {
-    pluginResult =
-        [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                          messageAsString:path];
-  } else {
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-  }
-
-  [self.commandDelegate sendPluginResult:pluginResult
-                              callbackId:command.callbackId];
+    [self.commandDelegate sendPluginResult:pluginResult
+                                callbackId:command.callbackId];
+  }];
 }
 
 /**
