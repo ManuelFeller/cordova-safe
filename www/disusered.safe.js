@@ -19,14 +19,16 @@ var safe = {
    * @returns {void}
    */
   encrypt: function(path, password, success, error) {
-    var encryptSuccess, encryptError;
-
+    // var encryptSuccess, encryptError;
+    console.log('Cordova:entering encryption...');
     if (!path || arguments.length === 0) return;
 
-    encryptSuccess = onSuccess.bind(null, success);
-    encryptError = onError.bind(null, error);
+    // encryptSuccess = onSuccess.bind(null, success);
+    // encryptError = onError.bind(null, error);
 
-    exec(encryptSuccess, encryptError, 'Safe', 'encrypt', [path, password]);
+    // exec(encryptSuccess, encryptError, 'Safe', 'encrypt', [path, password]);
+    console.log('Cordova:executing encryption...');
+    exec(success, error, 'Safe', 'encrypt', [path, password]);
   },
 
   /**
